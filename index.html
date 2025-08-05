@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shafiu Jimoh - Virtual Assistant & Digital Marketing Expert</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .skill-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 2s ease-in-out;
+        }
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #667eea;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        @media print {
+            body { -webkit-print-color-adjust: exact; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="text-2xl font-bold gradient-text">Shafiu Jimoh</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition duration-300">About</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 transition duration-300">Services</a>
+                    <a href="#skills" class="text-gray-600 hover:text-blue-600 transition duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-600 hover:text-blue-600 transition duration-300">Projects</a>
+                    <a href="#experience" class="text-gray-600 hover:text-blue-600 transition duration-300">Experience</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition duration-300">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-20 mt-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <h1 class="text-5xl font-bold mb-4">Shafiu Jimoh</h1>
+                <p class="text-2xl mb-6">Virtual Assistant Specialist | Digital Marketing Expert | Training & Education Facilitator</p>
+                <div class="flex justify-center items-center space-x-6 text-lg">
+                    <div class="flex items-center"><i class="fas fa-envelope mr-2"></i> Shafiujimoh2003@gmail.com</div>
+                    <div class="flex items-center"><i class="fas fa-phone mr-2"></i> +234-813-030-7875</div>
+                    <div class="flex items-center"><i class="fas fa-map-marker-alt mr-2"></i> Abuja, Nigeria (GMT+1)</div>
+                </div>
+            </div>
+            <div class="flex justify-center space-x-4">
+                <a href="https://linkedin.com/in/shafiujimoh" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                    <i class="fab fa-linkedin mr-2"></i> LinkedIn Profile
+                </a>
+                <a href="#contact" class="border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-blue-600 transition duration-300">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="stats-number">60%</div>
+                    <p class="text-gray-600 font-semibold">Productivity Increase</p>
+                </div>
+                <div class="p-6">
+                    <div class="stats-number">35%</div>
+                    <p class="text-gray-600 font-semibold">SEO Traffic Growth</p>
+                </div>
+                <div class="p-6">
+                    <div class="stats-number">1000+</div>
+                    <p class="text-gray-600 font-semibold">Community Followers</p>
+                </div>
+                <div class="p-6">
+                    <div class="stats-number">100+</div>
+                    <p class="text-gray-600 font-semibold">Training Materials</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">About Me</h2>
+                <p class="text-xl text-gray-600">Certified Virtual Assistant with 2+ years of comprehensive experience</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Professional Summary</h3>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Certified Virtual Assistant with 2+ years of comprehensive experience in executive support, digital marketing automation, and client education. Proven track record of increasing client productivity by 60% through process automation and delivering 35% organic traffic growth through strategic SEO implementation.
+                    </p>
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                        Passionate educator with extensive experience training teams on digital tools and virtual assistance best practices. Native English speaker (99% proficiency) with expertise in GoHighLevel, WordPress management, and creating scalable business solutions for busy executives and entrepreneurs.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>2+ Years Experience</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Native English Speaker</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Available Immediately</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-3"></i>
+                            <span>Global Remote Work</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h4 class="text-xl font-bold mb-6">Core Values</h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-graduation-cap text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-2">Education First</h5>
+                                <p class="text-gray-600">Focus on knowledge transfer, empowering clients and teams</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-green-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-chart-line text-green-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-2">Results Driven</h5>
+                                <p class="text-gray-600">Measurable outcomes, continuous improvement, delivering tangible value</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-handshake text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-2">Partnership Mindset</h5>
+                                <p class="text-gray-600">Long-term partnerships built on trust and mutual growth</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="bg-orange-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-lightbulb text-orange-600"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-semibold mb-2">Innovation Focus</h5>
+                                <p class="text-gray-600">Staying current with latest technologies and tools</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Services Offered</h2>
+                <p class="text-xl text-gray-600">Comprehensive virtual assistance and digital marketing solutions</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-user-tie text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Executive Support</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Calendar management & scheduling</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Email management & correspondence</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Travel planning</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Meeting preparation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Document organization</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="bg-green-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Digital Marketing</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>SEO optimization & content strategy</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Social media management</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Email marketing campaigns</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>WordPress website management</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Analytics & reporting</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="bg-purple-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-cogs text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Process Automation</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>GoHighLevel CRM setup & management</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Zapier workflow automation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>N8N process optimization</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Database management & integration</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Custom automation solutions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Technical Skills</h2>
+                <p class="text-xl text-gray-600">Proficiency levels in key technologies and tools</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Automation & CRM Platforms</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">GoHighLevel CRM</span>
+                                <span class="text-blue-600">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Zapier Automation</span>
+                                <span class="text-blue-600">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">HubSpot CRM</span>
+                                <span class="text-blue-600">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">N8N Workflows</span>
+                                <span class="text-blue-600">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Digital Marketing Tools</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">WordPress Management</span>
+                                <span class="text-blue-600">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Social Media Management</span>
+                                <span class="text-blue-600">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Email Marketing</span>
+                                <span class="text-blue-600">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">SEO Optimization</span>
+                                <span class="text-blue-600">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Project Case Studies</h2>
+                <p class="text-xl text-gray-600">Real results from successful client engagements</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="bg-blue-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-shopping-cart text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">E-commerce Business Automation</h3>
+                    <p class="text-gray-600 mb-4">Online Retail Store optimization with comprehensive automation solutions.</p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Time Reduction:</span>
+                            <span class="text-blue-600 font-bold">65%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Sales Increase:</span>
+                            <span class="text-green-600 font-bold">25%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Customer Satisfaction:</span>
+                            <span class="text-purple-600 font-bold">90%</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500">GoHighLevel CRM integration, automated order confirmations, customer chatbot, inventory tracking</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="bg-green-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Real Estate Lead Generation</h3>
+                    <p class="text-gray-600 mb-4">Real Estate Agency lead management and nurturing system implementation.</p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Lead Increase:</span>
+                            <span class="text-blue-600 font-bold">150%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Conversion Rate:</span>
+                            <span class="text-green-600 font-bold">45%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">ROI Improvement:</span>
+                            <span class="text-purple-600 font-bold">3x</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500">Multi-channel lead capture, automated lead scoring, WhatsApp/SMS automation, property scheduling</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border border-gray-100">
+                    <div class="bg-purple-100 p-3 rounded-full w-16 h-16 flex items-center justify-center mb-6">
+                        <i class="fas fa-graduation-cap text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Educational Institution Overhaul</h3>
+                    <p class="text-gray-600 mb-4">Private Secondary School administrative system transformation.</p>
+                    <div class="space-y-2 mb-6">
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Admin Efficiency:</span>
+                            <span class="text-blue-600 font-bold">70%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Parent Satisfaction:</span>
+                            <span class="text-green-600 font-bold">95%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm font-semibold">Staff Adoption:</span>
+                            <span class="text-purple-600 font-bold">100%</span>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-500">Digital information system, automated parent-teacher portal, online fee payments, staff training</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training & Education Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Training & Education</h2>
+                <p class="text-xl text-gray-600">Empowering teams through comprehensive training programs</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">Virtual Assistant Mastery Course</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-clock text-blue-600 mr-3"></i>
+                            <span>6-week comprehensive program</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-users text-green-600 mr-3"></i>
+                            <span>25 trainees completed</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-percentage text-purple-600 mr-3"></i>
+                            <span>90% placement rate within 30 days</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-chart-line text-orange-600 mr-3"></i>
+                            <span>150% average income increase</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-6">Covers client management, automation tools, and business development with hands-on practical demonstrations.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 class="text-2xl font-bold mb-6">GoHighLevel Certification Program</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-rocket text-blue-600 mr-3"></i>
+                            <span>Reduced learning curve from 3 weeks to 5 days</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-building text-green-600 mr-3"></i>
+                            <span>15 businesses trained on automation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-trending-up text-purple-600 mr-3"></i>
+                            <span>40% average productivity increase</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-video text-orange-600 mr-3"></i>
+                            <span>100+ video tutorials created</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mt-6">Intensive training on CRM automation, funnel building, and client communication workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Professional Experience</h2>
+                <p class="text-xl text-gray-600">Career journey and key accomplishments</p>
+            </div>
+            <div class="relative">
+                <div class="absolute left-8 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                <div class="space-y-12">
+                    <div class="relative pl-20 timeline-item">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold">Virtual Assistant</h3>
+                                    <p class="text-blue-600 font-semibold">ICMGx Agency</p>
+                                </div>
+                                <span class="text-gray-500 text-sm">January 2024 – Present</span>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• Orchestrated comprehensive client communication strategies using GoHighLevel, N8N, and Zapier</li>
+                                <li>• Achieved 35% organic traffic growth through strategic SEO content optimization</li>
+                                <li>• Streamlined administrative workflows ensuring 100% on-time project delivery</li>
+                                <li>• Reduced manual processing time by 60% through automated client onboarding systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative pl-20 timeline-item">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold">Freelance Copywriter & Content Strategist</h3>
+                                    <p class="text-blue-600 font-semibold">Self-Employed</p>
+                                </div>
+                                <span class="text-gray-500 text-sm">June 2023 – Present</span>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• Created compelling copy generating 20% increase in audience engagement</li>
+                                <li>• Authored over 100 professional YouTube video scripts</li>
+                                <li>• Built and managed social media presence to 1,000+ engaged followers</li>
+                                <li>• Developed high-converting email marketing campaigns for diverse clients</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative pl-20 timeline-item">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold">Administrative Intern</h3>
+                                    <p class="text-blue-600 font-semibold">Nigerian Airspace Management Agency</p>
+                                </div>
+                                <span class="text-gray-500 text-sm">August 2023</span>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• Revolutionized office operations through advanced scheduling systems</li>
+                                <li>• Maintained 99.8% accuracy in critical data entry and record-keeping</li>
+                                <li>• Improved document accessibility by 75% through digital filing systems</li>
+                                <li>• Provided exceptional customer service to internal and external stakeholders</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="relative pl-20 timeline-item">
+                        <div class="bg-white p-6 rounded-2xl shadow-lg">
+                            <div class="flex justify-between items-start mb-4">
+                                <div>
+                                    <h3 class="text-xl font-bold">Educational Tutor (Volunteer)</h3>
+                                    <p class="text-blue-600 font-semibold">Various Educational Institutions</p>
+                                </div>
+                                <span class="text-gray-500 text-sm">2022 – Present</span>
+                            </div>
+                            <ul class="text-gray-600 space-y-2">
+                                <li>• Provided academic support to secondary school students across various subjects</li>
+                                <li>• Assisted in organizing educational activities and student assessments</li>
+                                <li>• Mentored and tutored fellow students at University of Ilorin as Peer Tutor</li>
+                                <li>• Demonstrated leadership in educational support roles with clear communication</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Client Testimonials</h2>
+                <p class="text-xl text-gray-600">What clients say about working with me</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold">MA</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Adebayo</h4>
+                            <p class="text-gray-600 text-sm">E-commerce Business Owner</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"The automation systems he implemented saved us 30+ hours per week and increased our sales by 25%. His training approach made it easy for our team to adopt the new processes."</p>
+                    <div class="flex text-yellow-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-green-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold">SO</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Okonkwo</h4>
+                            <p class="text-gray-600 text-sm">Real Estate Agency Director</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"His lead generation system increased our qualified leads by 150% and his patient teaching style helped our team master the new tools quickly."</p>
+                    <div class="flex text-yellow-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="testimonial-card p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-purple-600 text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <span class="font-bold">IY</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Dr. Ibrahim Yusuf</h4>
+                            <p class="text-gray-600 text-sm">School Administrator</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"His training program ensured 100% staff adoption, and the efficiency improvements have been remarkable. The parent satisfaction rate increased to 95%."</p>
+                    <div class="flex text-yellow-500 mt-4">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold gradient-text mb-4">Education & Certifications</h2>
+                <p class="text-xl text-gray-600">Academic background and professional credentials</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-blue-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-university text-blue-600 text-2xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Bachelor of Science</h3>
+                            <p class="text-gray-600">Criminology and Security Studies</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-600">
+                        <p class="font-semibold mb-2">University of Ilorin, 2024</p>
+                        <p class="text-sm">Relevant coursework: Research Methods, Data Analysis, Communication Studies, Psychology</p>
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-center">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-green-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">ALX Virtual Assistant Professional Certificate</h4>
+                            <p class="text-gray-600 text-sm">Comprehensive VA training & certification</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-center">
+                        <div class="bg-purple-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-purple-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Udemy Virtual Assistant Course</h4>
+                            <p class="text-gray-600 text-sm">Advanced client management & tools</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-center">
+                        <div class="bg-orange-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-orange-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">GoHighLevel Certification</h4>
+                            <p class="text-gray-600 text-sm">CRM automation & funnel building expertise</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg border border-gray-100 flex items-center">
+                        <div class="bg-red-100 p-3 rounded-full mr-4">
+                            <i class="fas fa-certificate text-red-600"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Digital Marketing & SEO Optimization</h4>
+                            <p class="text-gray-600 text-sm">Comprehensive digital marketing strategies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 gradient-bg text-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Get In Touch</h2>
+                <p class="text-xl">Ready to transform your business with expert virtual assistance?</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-8">Let's Work Together</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email</h4>
+                                <p>Shafiujimoh2003@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone</h4>
+                                <p>+234-813-030-7875</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fab fa-linkedin text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">LinkedIn</h4>
+                                <p>linkedin.com/in/shafiujimoh</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Location</h4>
+                                <p>Abuja, Nigeria (GMT+1)</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="bg-white bg-opacity-20 p-3 rounded-full mr-4">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Availability</h4>
+                                <p>Available Immediately</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white bg-opacity-10 p-8 rounded-2xl backdrop-blur-sm">
+                    <h3 class="text-2xl font-bold mb-6">Why Choose Me?</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                            <p>Native English speaker with 99% proficiency</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                            <p>Proven track record: 60% productivity increase, 35% SEO growth</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                            <p>Comprehensive training and knowledge transfer included</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                            <p>Expertise in latest automation tools and technologies</p>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-300 mr-3 mt-1"></i>
+                            <p>Long-term partnership approach with measurable results</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <a href="mailto:Shafiujimoh2003@gmail.com" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 inline-block">
+                            Start Your Project Today
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold gradient-text mb-4">Shafiu Jimoh</h3>
+                <p class="text-gray-400">Virtual Assistant Specialist | Digital Marketing Expert | Training & Education Facilitator</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="mailto:Shafiujimoh2003@gmail.com" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fas fa-envelope text-2xl"></i>
+                </a>
+                <a href="https://linkedin.com/in/shafiujimoh" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fab fa-linkedin text-2xl"></i>
+                </a>
+                <a href="tel:+2348130307875" class="text-gray-400 hover:text-white transition duration-300">
+                    <i class="fas fa-phone text-2xl"></i>
+                </a>
+            </div>
+            <div class="border-t border-gray-700 pt-8">
+                <p class="text-gray-400">&copy; 2024 Shafiu Jimoh. All rights reserved. | Available Immediately for Global Clients</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Skills animation on scroll
+        function animateSkills() {
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const rect = bar.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.width = width;
+                    }, 200);
+                }
+            });
+        }
+
+        // Stats counter animation
+        function animateStats() {
+            const stats = document.querySelectorAll('.stats-number');
+            stats.forEach(stat => {
+                const rect = stat.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    const target = stat.textContent;
+                    const isPercentage = target.includes('%');
+                    const number = parseInt(target.replace(/[^\d]/g, ''));
+                    let current = 0;
+                    const increment = number / 30;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= number) {
+                            current = number;
+                            clearInterval(timer);
+                        }
+                        stat.textContent = Math.floor(current) + (isPercentage ? '%' : target.includes('+') ? '+' : '');
+                    }, 50);
+                }
+            });
+        }
+
+        // Scroll event listener
+        let animated = false;
+        window.addEventListener('scroll', () => {
+            if (!animated) {
+                animateSkills();
+                animateStats();
+                animated = true;
+            }
+        });
+
+        // Initial load animations
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                animateSkills();
+                animateStats();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
