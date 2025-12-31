@@ -3,9 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shafiu Jimoh - Virtual Assistant & Digital Marketing Expert</title>
+    <title>Shafiu Jimoh - Executive Virtual Assistant & Digital Marketing Expert</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        :root {
+            /* Modern Light Color Palette - Professional & Accessible */
+            --primary-blue: #4A90E2;
+            --primary-light: #E8F4FD;
+            --secondary-teal: #50C9C3;
+            --accent-coral: #FF6B6B;
+            --accent-gold: #FFD93D;
+            --neutral-dark: #2C3E50;
+            --neutral-mid: #5A6C7D;
+            --neutral-light: #F7F9FC;
+            --white: #FFFFFF;
+            --text-primary: #2C3E50;
+            --text-secondary: #5A6C7D;
+            --success: #6BCF7F;
+            --gradient-primary: linear-gradient(135deg, #4A90E2 0%, #50C9C3 100%);
+            --gradient-secondary: linear-gradient(135deg, #FFD93D 0%, #FF6B6B 100%);
+            --shadow-sm: 0 2px 8px rgba(74, 144, 226, 0.08);
+            --shadow-md: 0 4px 16px rgba(74, 144, 226, 0.12);
+            --shadow-lg: 0 8px 32px rgba(74, 144, 226, 0.16);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,10 +35,11 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: var(--text-primary);
+            background: var(--neutral-light);
+            overflow-x: hidden;
         }
 
         .container {
@@ -25,11 +48,22 @@
             padding: 0 20px;
         }
 
-        /* Header Styles */
+        /* Animated Background Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Header with Hero Image */
         header {
-            background: linear-gradient(135deg, #1a252f 0%, #2c3e50 50%, #34495e 100%);
-            color: white;
-            padding: 80px 0;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 60px 0 80px;
             position: relative;
             overflow: hidden;
         }
@@ -41,37 +75,88 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="40" r="1" fill="%23ffffff" opacity="0.03"/><circle cx="40" cy="80" r="1" fill="%23ffffff" opacity="0.04"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="url(%23dots)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-section {
+            position: relative;
+            z-index: 1;
         }
 
         .hero-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .hero-image-container {
             position: relative;
-            z-index: 1;
-            text-align: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--white);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: var(--primary-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        .hero-text {
+            text-align: left;
         }
 
         .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            background: linear-gradient(45deg, #ffffff, #17a2b8);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--white), var(--accent-gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            line-height: 1.2;
         }
 
         .hero-subtitle {
-            font-size: 1.4rem;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--white);
+            opacity: 0.9;
             margin-bottom: 30px;
-            color: #17a2b8;
-            font-weight: 300;
         }
 
         .contact-info {
             display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 30px;
             flex-wrap: wrap;
         }
 
@@ -79,50 +164,103 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            color: #ecf0f1;
+            color: var(--white);
+            font-size: 0.95rem;
         }
 
         .contact-item i {
-            color: #17a2b8;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
         }
 
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--white);
+            color: var(--primary-blue);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        /* Stats Section */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
+            gap: 20px;
+            margin-top: 60px;
         }
 
         .stat-item {
             text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
         }
 
         .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: #17a2b8;
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--white);
             display: block;
+            line-height: 1;
         }
 
         .stat-label {
             font-size: 0.9rem;
-            color: #bdc3c7;
-            margin-top: 5px;
+            color: var(--white);
+            margin-top: 10px;
+            opacity: 0.9;
         }
 
         /* Navigation */
         nav {
-            background: #2c3e50;
+            background: var(--white);
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            box-shadow: var(--shadow-sm);
         }
 
         .nav-links {
@@ -133,26 +271,29 @@
         }
 
         .nav-links a {
-            color: white;
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: color 0.3s ease;
             position: relative;
+            padding: 8px 0;
         }
 
         .nav-links a:hover {
-            color: #17a2b8;
+            color: var(--primary-blue);
         }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
-            height: 2px;
-            background: #17a2b8;
+            height: 3px;
+            background: var(--gradient-primary);
             transition: width 0.3s ease;
+            border-radius: 2px;
         }
 
         .nav-links a:hover::after {
@@ -161,15 +302,34 @@
 
         /* Section Styles */
         .section {
-            padding: 80px 0;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .section-alt {
+            background: var(--white);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: #2c3e50;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            font-weight: 800;
             position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .section-title::after {
@@ -178,45 +338,25 @@
             bottom: -10px;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(45deg, #17a2b8, #6c757d);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-primary);
             border-radius: 2px;
         }
 
         /* About Section */
         .about-content {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .profile-placeholder {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #17a2b8, #6c757d);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            max-width: 900px;
             margin: 0 auto;
-            box-shadow: 0 20px 40px rgba(23, 162, 184, 0.3);
-        }
-
-        .profile-placeholder i {
-            font-size: 4rem;
-            color: white;
         }
 
         .about-text {
             font-size: 1.1rem;
-            line-height: 1.8;
-            color: #495057;
+            line-height: 1.9;
+            color: var(--text-secondary);
         }
 
         .about-text p {
@@ -224,57 +364,83 @@
         }
 
         .highlight {
-            color: #17a2b8;
-            font-weight: 600;
+            color: var(--primary-blue);
+            font-weight: 700;
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 4px;
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .skill-category {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-left: 5px solid #17a2b8;
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border-left: 5px solid var(--primary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-left-color: var(--secondary-teal);
         }
 
         .skill-category h3 {
-            color: #2c3e50;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        .skill-category h3 i {
+            color: var(--primary-blue);
+            font-size: 1.6rem;
         }
 
         .skill-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            padding: 10px 0;
+            margin-bottom: 18px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--primary-light);
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
         }
 
         .skill-name {
-            font-weight: 500;
-            color: #495057;
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1rem;
         }
 
         .skill-level {
-            background: #17a2b8;
-            color: white;
-            padding: 4px 12px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 600;
+            box-shadow: var(--shadow-sm);
         }
 
-        /* Experience Section */
+        /* Experience Timeline */
         .experience-timeline {
             position: relative;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
@@ -284,19 +450,26 @@
             left: 50%;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #17a2b8, #6c757d);
+            width: 4px;
+            background: var(--gradient-primary);
             transform: translateX(-50%);
+            border-radius: 2px;
         }
 
         .experience-item {
             position: relative;
-            margin: 40px 0;
-            padding: 30px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 50px 0;
+            padding: 35px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
             width: calc(50% - 40px);
+            transition: all 0.3s ease;
+        }
+
+        .experience-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
         }
 
         .experience-item:nth-child(odd) {
@@ -310,45 +483,54 @@
         .experience-item::before {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
-            background: #17a2b8;
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
             border-radius: 50%;
             top: 50%;
+            box-shadow: 0 0 0 6px var(--primary-light);
         }
 
         .experience-item:nth-child(odd)::before {
-            right: -50px;
+            right: -52px;
             transform: translateY(-50%);
         }
 
         .experience-item:nth-child(even)::before {
-            left: -50px;
+            left: -52px;
             transform: translateY(-50%);
         }
 
         .experience-title {
-            color: #2c3e50;
-            font-size: 1.3rem;
-            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.4rem;
+            font-weight: 700;
             margin-bottom: 10px;
         }
 
         .experience-company {
-            color: #17a2b8;
-            font-weight: 500;
-            margin-bottom: 10px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
         .experience-period {
-            color: #6c757d;
+            color: var(--text-secondary);
             font-size: 0.9rem;
-            margin-bottom: 15px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .experience-period i {
+            color: var(--secondary-teal);
         }
 
         .experience-description {
-            color: #495057;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .experience-description ul {
@@ -358,151 +540,487 @@
 
         .experience-description li {
             position: relative;
-            padding-left: 20px;
-            margin-bottom: 8px;
+            padding-left: 25px;
+            margin-bottom: 10px;
         }
 
         .experience-description li::before {
-            content: '▸';
+            content: '✓';
             position: absolute;
             left: 0;
-            color: #17a2b8;
+            color: var(--success);
             font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Certifications Section */
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .certification-card {
+            background: var(--white);
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--primary-blue);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .certification-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .certification-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-icon {
+            width: 70px;
+            height: 70px;
+            margin-bottom: 20px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .cert-icon i {
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .cert-title {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .cert-issuer {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .cert-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .cert-date i {
+            color: var(--secondary-teal);
         }
 
         /* Services Section */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .service-card {
-            background: white;
+            background: var(--white);
             padding: 40px 30px;
-            border-radius: 15px;
+            border-radius: 20px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-top: 5px solid #17a2b8;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--primary-blue);
+            cursor: pointer;
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            box-shadow: var(--shadow-lg);
+            border-top-color: var(--secondary-teal);
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, #17a2b8, #6c757d);
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px;
+            background: var(--gradient-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
         }
 
         .service-icon i {
-            font-size: 2rem;
-            color: white;
+            font-size: 2.5rem;
+            color: var(--white);
         }
 
         .service-title {
-            font-size: 1.4rem;
-            color: #2c3e50;
+            font-size: 1.5rem;
+            color: var(--text-primary);
             margin-bottom: 15px;
-            font-weight: 600;
+            font-weight: 700;
         }
 
         .service-description {
-            color: #495057;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* Projects/Achievements Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 35px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 4rem;
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .project-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .project-tag {
+            background: var(--primary-light);
+            color: var(--primary-blue);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 12px;
+        }
+
+        /* Interactive Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.9);
+            backdrop-filter: blur(10px);
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .modal-content {
+            background: var(--white);
+            margin: 5% auto;
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 700px;
+            max-height: 80vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 80px rgba(0, 0, 0, 0.3);
+            animation: slideUp 0.4s ease;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: var(--text-secondary);
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: var(--accent-coral);
         }
 
         /* Contact Section */
         .contact-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
+            background: var(--gradient-primary);
+            color: var(--white);
         }
 
         .contact-content {
             text-align: center;
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
         .contact-section .section-title {
-            color: white;
+            color: var(--white);
+        }
+
+        .contact-section .section-subtitle {
+            color: var(--white);
+            opacity: 0.95;
         }
 
         .contact-methods {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
         }
 
         .contact-method {
-            padding: 30px 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .contact-method:hover {
-            background: rgba(255, 255, 255, 0.15);
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-5px);
         }
 
         .contact-method i {
-            font-size: 2rem;
-            color: #17a2b8;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
             margin-bottom: 15px;
         }
 
         .contact-method h3 {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-weight: 700;
         }
 
         .contact-method a {
-            color: #ecf0f1;
+            color: var(--white);
             text-decoration: none;
+            word-break: break-word;
         }
 
         .contact-method a:hover {
-            color: #17a2b8;
+            color: var(--accent-gold);
+        }
+
+        .why-choose {
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .why-choose h3 {
+            margin-bottom: 30px;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .why-choose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: left;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.05rem;
+        }
+
+        .why-item i {
+            color: var(--success);
+            font-size: 1.2rem;
         }
 
         /* Footer */
         footer {
-            background: #1a252f;
-            color: white;
+            background: var(--neutral-dark);
+            color: var(--white);
             text-align: center;
-            padding: 30px 0;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 55px;
+            height: 55px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            z-index: 999;
+        }
+
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .contact-info {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .about-content {
+        @media (max-width: 968px) {
+            .hero-content {
                 grid-template-columns: 1fr;
+                text-align: center;
                 gap: 30px;
+            }
+
+            .hero-text {
                 text-align: center;
             }
 
-            .nav-links {
-                flex-direction: column;
-                gap: 20px;
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .hero-image {
+                margin: 0 auto;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .cta-buttons {
+                justify-content: center;
             }
 
             .experience-timeline::before {
@@ -515,11 +1033,37 @@
             }
 
             .experience-item::before {
-                left: -50px !important;
+                left: -52px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 20px;
             }
 
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skills-grid,
+            .certifications-grid,
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -531,34 +1075,73 @@
             .stats-grid {
                 grid-template-columns: 1fr;
             }
+
+            .modal-content {
+                margin: 10% 20px;
+                padding: 25px;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading {
+            animation: pulse 2s ease-in-out infinite;
         }
     </style>
 </head>
 <body>
+    <!-- Header with Hero Section -->
     <header>
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">SHAFIU JIMOH</h1>
-                <p class="hero-subtitle">Virtual Assistant & Digital Marketing Expert</p>
-                
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>Shafiujimoh2003@gmail.com</span>
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-image-container">
+                        <div class="hero-image">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fab fa-linkedin"></i>
-                        <span>linkedin.com/in/shafiujimoh</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Abuja, Nigeria</span>
+                    <div class="hero-text">
+                        <h1 class="hero-title">SHAFIU JIMOH</h1>
+                        <p class="hero-subtitle">Executive Virtual Assistant & Digital Marketing Expert</p>
+                        <p class="hero-description">
+                            Transforming business operations through strategic automation, expert administration, and data-driven digital marketing solutions.
+                        </p>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>Shafiujimoh2003@gmail.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fab fa-linkedin"></i>
+                                <span>linkedin.com/in/shafiujimoh</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Abuja, Nigeria</span>
+                            </div>
+                        </div>
+
+                        <div class="cta-buttons">
+                            <a href="#contact" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Hire Me
+                            </a>
+                            <a href="#projects" class="btn btn-secondary">
+                                <i class="fas fa-folder-open"></i>
+                                View Work
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 <div class="stats-grid">
                     <div class="stat-item">
-                        <span class="stat-number">3+</span>
+                        <span class="stat-number">5+</span>
                         <span class="stat-label">Years Experience</span>
                     </div>
                     <div class="stat-item">
@@ -566,8 +1149,8 @@
                         <span class="stat-label">Traffic Increase</span>
                     </div>
                     <div class="stat-item">
-                        <span class="stat-number">5</span>
-                        <span class="stat-label">Simultaneous Clients</span>
+                        <span class="stat-number">18+</span>
+                        <span class="stat-label">Clients Served</span>
                     </div>
                     <div class="stat-item">
                         <span class="stat-number">95%</span>
@@ -578,55 +1161,75 @@
         </div>
     </header>
 
+    <!-- Navigation -->
     <nav>
         <div class="container">
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
                 <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Achievements</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section id="about" class="section">
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
         <div class="container">
             <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">
+                Experienced professional dedicated to operational excellence and business growth
+            </p>
             <div class="about-content">
-                <div class="about-image">
-                    <div class="profile-placeholder">
-                        <i class="fas fa-user"></i>
-                    </div>
-                </div>
                 <div class="about-text">
-                    <p>Results-driven Virtual Assistant with <span class="highlight">3+ years of experience</span> in administrative support, digital marketing, and content creation. Proven track record of managing <span class="highlight">5 simultaneous clients</span> while improving operational efficiency by <span class="highlight">30%</span>.</p>
+                    <p>
+                        Executive Virtual Assistant with <span class="highlight">5+ years of experience</span> supporting senior executives in remote, high-responsibility roles. I bring strong judgment, high discretion, and a proven ability to manage priorities, protect executive time, and maintain operational order in fast-moving environments.
+                    </p>
                     
-                    <p>My expertise spans automation tools, SEO optimization, and content strategy with demonstrated success in increasing <span class="highlight">organic traffic by 45%</span> and <span class="highlight">audience engagement by 20%</span>. I specialize in GoHighLevel, N8N, and Zapier automation, helping businesses streamline their operations and scale effectively.</p>
+                    <p>
+                        My expertise spans <span class="highlight">workflow automation</span>, <span class="highlight">SEO optimization</span>, and <span class="highlight">strategic content creation</span> with demonstrated success in increasing organic traffic by <span class="highlight">45%</span> and audience engagement by <span class="highlight">20%</span>. I specialize in GoHighLevel, N8N, Zapier, and AI automation tools, helping businesses streamline operations and scale effectively.
+                    </p>
                     
-                    <p>As a passionate educator and native English speaker, I've trained teams on digital tools and virtual assistance best practices, focusing on knowledge transfer and empowering clients to achieve measurable outcomes through long-term partnerships built on trust and mutual growth.</p>
+                    <p>
+                        As a <span class="highlight">passionate educator</span> and native English speaker with 99% proficiency, I've trained teams on digital tools and virtual assistance best practices. I focus on knowledge transfer, empowering clients to achieve measurable outcomes through long-term partnerships built on trust and mutual growth.
+                    </p>
+
+                    <p>
+                        With a comprehensive background in <span class="highlight">project management</span>, <span class="highlight">human resource management</span>, and <span class="highlight">AI-powered workflows</span>, I deliver strategic solutions that drive business success and operational efficiency.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="skills" class="section" style="background: #f8f9fa;">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <div class="container">
             <h2 class="section-title">Core Competencies</h2>
+            <p class="section-subtitle">
+                Expert-level proficiency across essential business and technical domains
+            </p>
             <div class="skills-grid">
                 <div class="skill-category">
-                    <h3><i class="fas fa-cogs"></i> Automation Tools</h3>
+                    <h3><i class="fas fa-robot"></i> Automation & AI</h3>
                     <div class="skill-item">
-                        <span class="skill-name">GoHighLevel</span>
+                        <span class="skill-name">GoHighLevel CRM</span>
                         <span class="skill-level">Expert</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">N8N</span>
+                        <span class="skill-name">N8N Workflows</span>
                         <span class="skill-level">Expert</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Zapier</span>
+                        <span class="skill-name">Zapier Automation</span>
                         <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">AI Agents & MCP</span>
+                        <span class="skill-level">Advanced</span>
                     </div>
                 </div>
 
@@ -641,15 +1244,19 @@
                         <span class="skill-level">Expert</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Content Creation</span>
+                        <span class="skill-name">Content Strategy</span>
                         <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Social Media Marketing</span>
+                        <span class="skill-level">Advanced</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
                     <h3><i class="fas fa-briefcase"></i> Business Tools</h3>
                     <div class="skill-item">
-                        <span class="skill-name">Microsoft Office Suite</span>
+                        <span class="skill-name">Microsoft Office 365</span>
                         <span class="skill-level">Advanced</span>
                     </div>
                     <div class="skill-item">
@@ -657,44 +1264,100 @@
                         <span class="skill-level">Advanced</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Project Management</span>
+                        <span class="skill-name">Trello & Asana</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Database Management</span>
                         <span class="skill-level">Advanced</span>
                     </div>
                 </div>
 
                 <div class="skill-category">
-                    <h3><i class="fas fa-users"></i> Client Relations</h3>
+                    <h3><i class="fas fa-tasks"></i> Project Management</h3>
                     <div class="skill-item">
-                        <span class="skill-name">Communication</span>
+                        <span class="skill-name">Agile Methodology</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Scrum Framework</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">PMP Standards</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Resource Planning</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-users"></i> Executive Support</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Calendar Management</span>
                         <span class="skill-level">Expert</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Relationship Management</span>
+                        <span class="skill-name">Stakeholder Coordination</span>
                         <span class="skill-level">Expert</span>
                     </div>
                     <div class="skill-item">
-                        <span class="skill-name">Data Analysis</span>
-                        <span class="skill-level">Intermediate</span>
+                        <span class="skill-name">Meeting Preparation</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Confidential Communication</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3><i class="fas fa-user-graduate"></i> HR & Training</h3>
+                    <div class="skill-item">
+                        <span class="skill-name">Human Resource Management</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Team Training</span>
+                        <span class="skill-level">Expert</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Performance Management</span>
+                        <span class="skill-level">Advanced</span>
+                    </div>
+                    <div class="skill-item">
+                        <span class="skill-name">Knowledge Transfer</span>
+                        <span class="skill-level">Expert</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="section">
+    <!-- Experience Section -->
+    <section id="experience" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Professional Experience</h2>
+            <p class="section-subtitle">
+                Proven track record of delivering exceptional results across diverse roles
+            </p>
             <div class="experience-timeline">
                 <div class="experience-item">
-                    <h3 class="experience-title">Virtual Assistant</h3>
+                    <h3 class="experience-title">Executive Virtual Assistant</h3>
                     <div class="experience-company">ICMGx Agency</div>
-                    <div class="experience-period">January 2025 – Present</div>
+                    <div class="experience-period">
+                        <i class="far fa-calendar-alt"></i>
+                        January 2025 – Present
+                    </div>
                     <div class="experience-description">
                         <ul>
                             <li>Manage 5 simultaneous client accounts with 95% retention rate, generating over $50K in project value</li>
                             <li>Improved task completion efficiency by 30% through automation workflows using GoHighLevel, N8N, and Zapier</li>
                             <li>Increased client websites' organic traffic by 45% through strategic SEO content optimization</li>
                             <li>Create and upload 10+ SEO-optimized pieces monthly, boosting search rankings from page 3 to page 1</li>
+                            <li>Provide executive calendar management, inbox control, and strategic scheduling across multiple time zones</li>
                         </ul>
                     </div>
                 </div>
@@ -702,12 +1365,16 @@
                 <div class="experience-item">
                     <h3 class="experience-title">Freelance Copywriter</h3>
                     <div class="experience-company">Self-Employed</div>
-                    <div class="experience-period">June 2023 – Present</div>
+                    <div class="experience-period">
+                        <i class="far fa-calendar-alt"></i>
+                        June 2023 – Present
+                    </div>
                     <div class="experience-description">
                         <ul>
                             <li>Served 18+ clients with copy that increased audience engagement by 20% and conversion rates by 15%</li>
                             <li>Developed email campaigns achieving 35% open rates and 8% click-through rates</li>
                             <li>Created persuasive sales copy resulting in $75K+ in client revenue generation</li>
+                            <li>Specialized in long-form content, landing pages, and email marketing sequences</li>
                         </ul>
                     </div>
                 </div>
@@ -715,25 +1382,33 @@
                 <div class="experience-item">
                     <h3 class="experience-title">YouTube Scriptwriter</h3>
                     <div class="experience-company">Self-Employed</div>
-                    <div class="experience-period">June 2023 – Present</div>
+                    <div class="experience-period">
+                        <i class="far fa-calendar-alt"></i>
+                        June 2023 – Present
+                    </div>
                     <div class="experience-description">
                         <ul>
                             <li>Authored 100+ scripts for YouTube channels, generating average of 75K views per video</li>
                             <li>Contributed to channels gaining 50K+ subscribers through engaging storytelling content</li>
                             <li>Delivered scripts for 3 viral videos exceeding 500K views each</li>
+                            <li>Expertise in educational content, entertainment, and business-focused video scripts</li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="experience-item">
                     <h3 class="experience-title">Administrative Intern</h3>
-                    <div class="experience-company">Nigerian Airspace Management Agency</div>
-                    <div class="experience-period">August 2023</div>
+                    <div class="experience-company">Nigerian Airspace Management Agency (NAMA)</div>
+                    <div class="experience-period">
+                        <i class="far fa-calendar-alt"></i>
+                        August 2023
+                    </div>
                     <div class="experience-description">
                         <ul>
                             <li>Optimized office operations by digitizing filing systems, reducing document retrieval time by 40%</li>
                             <li>Created 25+ detailed reports and presentations for senior management</li>
                             <li>Maintained accurate database records with 99.8% accuracy rate</li>
+                            <li>Supported cross-functional teams in administrative and operational tasks</li>
                         </ul>
                     </div>
                 </div>
@@ -741,12 +1416,16 @@
                 <div class="experience-item">
                     <h3 class="experience-title">Social Media Manager</h3>
                     <div class="experience-company">Self-Employed</div>
-                    <div class="experience-period">March 2022 – Present</div>
+                    <div class="experience-period">
+                        <i class="far fa-calendar-alt"></i>
+                        March 2022 – Present
+                    </div>
                     <div class="experience-description">
                         <ul>
                             <li>Built and managed community of 2,800+ followers with 5.2% engagement rate</li>
                             <li>Increased follower growth by 180% over 24 months through strategic content planning</li>
                             <li>Created content calendar resulting in 40% increase in brand visibility</li>
+                            <li>Managed multiple social media platforms including Instagram, Twitter, and LinkedIn</li>
                         </ul>
                     </div>
                 </div>
@@ -754,16 +1433,103 @@
         </div>
     </section>
 
-    <section id="services" class="section" style="background: #f8f9fa;">
+    <!-- Certifications Section -->
+    <section id="certifications" class="section">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <p class="section-subtitle">
+                Continuous professional development and industry-recognized credentials
+            </p>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="cert-title">Virtual Assistant Certificate</h3>
+                    <div class="cert-issuer">ALX Africa</div>
+                    <div class="cert-date">
+                        <i class="far fa-calendar"></i>
+                        2024
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="cert-title">Professional Diploma of Virtual Executive Assistant</h3>
+                    <div class="cert-issuer">MTF Institute of Management, Technology and Finance - Udemy</div>
+                    <div class="cert-date">
+                        <i class="far fa-calendar"></i>
+                        2025
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3 class="cert-title">Project Management Certification</h3>
+                    <div class="cert-issuer">Udemy</div>
+                    <div class="cert-date">
+                        <i class="far fa-calendar"></i>
+                        2025
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3 class="cert-title">Advanced Program in Human Resource Management</h3>
+                    <div class="cert-issuer">MTF Institute of Management, Technology and Finance - Udemy</div>
+                    <div class="cert-date">
+                        <i class="far fa-calendar"></i>
+                        2025
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="cert-title">AI Automation Workflow, AI Agent, Vector Database, MCP</h3>
+                    <div class="cert-issuer">Udemy</div>
+                    <div class="cert-date">
+                        <i class="far fa-calendar"></i>
+                        2025
+                    </div>
+                </div>
+
+                <div class="certification-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="cert-title">Project Management Methodologies: Agile, Scrum and PMP</h3>
+                    <div class="cert-issuer">Udemy</div>
+                    <div class="cert-date">
+                        <i class="far fa-calendar"></i>
+                        2025
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Services Offered</h2>
+            <p class="section-subtitle">
+                Comprehensive solutions tailored to your business needs
+            </p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-user-tie"></i>
+                        <i class="fas fa-user-shield"></i>
                     </div>
                     <h3 class="service-title">Executive Support</h3>
-                    <p class="service-description">Comprehensive administrative support including calendar management, email correspondence, travel planning, meeting preparation, and document organization.</p>
+                    <p class="service-description">Comprehensive administrative support including calendar management, email correspondence, travel planning, meeting preparation, document organization, and stakeholder coordination.</p>
                 </div>
 
                 <div class="service-card">
@@ -771,15 +1537,15 @@
                         <i class="fas fa-bullhorn"></i>
                     </div>
                     <h3 class="service-title">Digital Marketing</h3>
-                    <p class="service-description">SEO optimization, content strategy, social media management, email marketing campaigns, WordPress management, and comprehensive analytics reporting.</p>
+                    <p class="service-description">SEO optimization, content strategy, social media management, email marketing campaigns, WordPress management, and comprehensive analytics reporting to drive growth.</p>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-robot"></i>
+                        <i class="fas fa-cogs"></i>
                     </div>
                     <h3 class="service-title">Process Automation</h3>
-                    <p class="service-description">GoHighLevel CRM setup, Zapier workflow automation, N8N process optimization, database management, and custom automation solutions.</p>
+                    <p class="service-description">GoHighLevel CRM setup, Zapier workflow automation, N8N process optimization, AI agent implementation, database management, and custom automation solutions.</p>
                 </div>
 
                 <div class="service-card">
@@ -787,7 +1553,7 @@
                         <i class="fas fa-pen-fancy"></i>
                     </div>
                     <h3 class="service-title">Content Creation</h3>
-                    <p class="service-description">Professional copywriting, YouTube scriptwriting, email campaigns, and content strategy development that drives engagement and conversions.</p>
+                    <p class="service-description">Professional copywriting, YouTube scriptwriting, email campaigns, blog articles, and content strategy development that drives engagement and conversions.</p>
                 </div>
 
                 <div class="service-card">
@@ -795,25 +1561,322 @@
                         <i class="fas fa-share-alt"></i>
                     </div>
                     <h3 class="service-title">Social Media Management</h3>
-                    <p class="service-description">Community building, content calendar creation, engagement strategies, and brand visibility enhancement across multiple platforms.</p>
+                    <p class="service-description">Community building, content calendar creation, engagement strategies, brand visibility enhancement, and performance analytics across multiple platforms.</p>
                 </div>
 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-graduation-cap"></i>
+                        <i class="fas fa-chalkboard-teacher"></i>
                     </div>
                     <h3 class="service-title">Training & Education</h3>
-                    <p class="service-description">Comprehensive training programs on virtual assistance tools, automation platforms, and digital marketing strategies with high placement rates.</p>
+                    <p class="service-description">Comprehensive training programs on virtual assistance tools, automation platforms, project management methodologies, and digital marketing strategies.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="service-title">Project Management</h3>
+                    <p class="service-description">Agile project management, Scrum implementation, resource planning, timeline management, and cross-functional team coordination for successful project delivery.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="service-title">HR Consulting</h3>
+                    <p class="service-description">Human resource management, recruitment support, performance evaluation, employee engagement strategies, and organizational development consulting.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects/Achievements Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title">Key Achievements</h2>
+            <p class="section-subtitle">
+                Notable projects and measurable results delivered for clients
+            </p>
+            <div class="projects-grid">
+                <div class="project-card" onclick="openModal('modal1')">
+                    <div class="project-image">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">45% Organic Traffic Growth</h3>
+                        <p class="project-description">
+                            Implemented comprehensive SEO strategy for multiple client websites, resulting in dramatic traffic increase and improved search rankings from page 3 to page 1.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">SEO</span>
+                            <span class="project-tag">Content Strategy</span>
+                            <span class="project-tag">Analytics</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('modal2')">
+                    <div class="project-image">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">30% Efficiency Improvement</h3>
+                        <p class="project-description">
+                            Designed and implemented automated workflows using GoHighLevel, N8N, and Zapier, streamlining operations and reducing manual task time significantly.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Automation</span>
+                            <span class="project-tag">GoHighLevel</span>
+                            <span class="project-tag">Zapier</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('modal3')">
+                    <div class="project-image">
+                        <i class="fas fa-envelope-open-text"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">35% Email Open Rate Achievement</h3>
+                        <p class="project-description">
+                            Crafted high-converting email campaigns with compelling copy that achieved industry-leading open rates and 8% click-through rates, driving significant revenue.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Email Marketing</span>
+                            <span class="project-tag">Copywriting</span>
+                            <span class="project-tag">Conversion</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('modal4')">
+                    <div class="project-image">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">3 Viral Videos (500K+ Views)</h3>
+                        <p class="project-description">
+                            Created engaging YouTube scripts that resulted in viral content, generating over 500K views per video and contributing to 50K+ subscriber growth for clients.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">YouTube</span>
+                            <span class="project-tag">Scriptwriting</span>
+                            <span class="project-tag">Content</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('modal5')">
+                    <div class="project-image">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">180% Social Media Growth</h3>
+                        <p class="project-description">
+                            Developed and executed strategic social media campaigns that increased follower base by 180% over 24 months with consistent 5.2% engagement rate.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Social Media</span>
+                            <span class="project-tag">Growth</span>
+                            <span class="project-tag">Engagement</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openModal('modal6')">
+                    <div class="project-image">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">$75K+ Revenue Generation</h3>
+                        <p class="project-description">
+                            Produced persuasive sales copy and marketing materials that directly contributed to over $75,000 in client revenue through improved conversion rates.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Sales Copy</span>
+                            <span class="project-tag">Revenue</span>
+                            <span class="project-tag">ROI</span>
+                        </div>
+                        <a href="#" class="project-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Detailed Project Information -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+            <h2 style="color: var(--primary-blue); margin-bottom: 20px;">45% Organic Traffic Growth</h2>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Challenge:</strong> Multiple client websites were struggling with low visibility in search engines, ranking on page 3 or lower for their target keywords, resulting in minimal organic traffic and lost business opportunities.
+            </p>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Solution:</strong> Implemented a comprehensive SEO strategy including:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <li>Detailed keyword research and competitor analysis</li>
+                <li>On-page optimization including meta tags, headers, and content structure</li>
+                <li>Creation of 10+ SEO-optimized content pieces monthly</li>
+                <li>Technical SEO improvements for site speed and mobile responsiveness</li>
+                <li>Strategic internal linking and content clustering</li>
+                <li>Regular performance monitoring and strategy adjustments</li>
+            </ul>
+            <p style="line-height: 1.8; color: var(--text-secondary);">
+                <strong>Results:</strong> Achieved 45% increase in organic traffic within 6 months, improved search rankings from page 3 to page 1 for primary keywords, and significantly increased qualified lead generation for clients.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+            <h2 style="color: var(--primary-blue); margin-bottom: 20px;">30% Efficiency Improvement Through Automation</h2>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Challenge:</strong> Clients were spending excessive time on repetitive manual tasks, leading to inefficiency, errors, and inability to focus on high-value strategic work.
+            </p>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Solution:</strong> Designed and implemented comprehensive automation workflows:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <li>GoHighLevel CRM setup for automated client communication and pipeline management</li>
+                <li>N8N workflows for data synchronization between multiple platforms</li>
+                <li>Zapier integrations connecting email, calendar, project management, and CRM systems</li>
+                <li>Automated reporting and analytics dashboards</li>
+                <li>Email sequence automation for lead nurturing</li>
+                <li>Document generation and filing automation</li>
+            </ul>
+            <p style="line-height: 1.8; color: var(--text-secondary);">
+                <strong>Results:</strong> Reduced time spent on manual tasks by 30%, eliminated data entry errors, freed up team members to focus on strategic initiatives, and improved overall operational efficiency.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+            <h2 style="color: var(--primary-blue); margin-bottom: 20px;">35% Email Open Rate Achievement</h2>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Challenge:</strong> Client email campaigns were underperforming with low open rates and minimal engagement, resulting in poor ROI on email marketing efforts.
+            </p>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Solution:</strong> Developed strategic email marketing campaigns:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <li>Crafted compelling subject lines using psychological triggers</li>
+                <li>Personalized email content based on subscriber segments</li>
+                <li>Optimized send times based on audience behavior analysis</li>
+                <li>A/B tested different approaches to identify top performers</li>
+                <li>Created value-driven content that resonated with target audience</li>
+                <li>Implemented strategic CTAs to drive desired actions</li>
+            </ul>
+            <p style="line-height: 1.8; color: var(--text-secondary);">
+                <strong>Results:</strong> Achieved 35% open rates (well above industry average of 20-25%), 8% click-through rates, and directly contributed to significant revenue increases through improved email marketing performance.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+            <h2 style="color: var(--primary-blue); margin-bottom: 20px;">3 Viral Videos (500K+ Views Each)</h2>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Challenge:</strong> YouTube channels needed engaging content that would capture audience attention, drive viewership, and contribute to subscriber growth in a highly competitive platform.
+            </p>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Solution:</strong> Created compelling YouTube scripts using proven storytelling techniques:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <li>Researched trending topics and audience interests</li>
+                <li>Crafted attention-grabbing hooks in the first 10 seconds</li>
+                <li>Structured content using story arcs to maintain engagement</li>
+                <li>Incorporated emotional elements and relatability</li>
+                <li>Optimized scripts for YouTube's recommendation algorithm</li>
+                <li>Included strategic CTAs for likes, comments, and subscriptions</li>
+            </ul>
+            <p style="line-height: 1.8; color: var(--text-secondary);">
+                <strong>Results:</strong> Authored 100+ scripts generating an average of 75K views per video, contributed to 50K+ subscriber growth, and created 3 viral videos each exceeding 500K views, significantly boosting channel authority and monetization potential.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal5')">&times;</span>
+            <h2 style="color: var(--primary-blue); margin-bottom: 20px;">180% Social Media Growth</h2>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Challenge:</strong> Client social media accounts had stagnant growth, low engagement rates, and minimal brand visibility, failing to convert followers into customers.
+            </p>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Solution:</strong> Implemented comprehensive social media growth strategy:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <li>Developed content calendar with diverse post types</li>
+                <li>Created visually appealing graphics and carousel posts</li>
+                <li>Implemented strategic hashtag research and usage</li>
+                <li>Engaged authentically with community through comments and DMs</li>
+                <li>Collaborated with complementary accounts for cross-promotion</li>
+                <li>Analyzed metrics to optimize posting times and content types</li>
+                <li>Built community through consistent interaction and value delivery</li>
+            </ul>
+            <p style="line-height: 1.8; color: var(--text-secondary);">
+                <strong>Results:</strong> Grew follower base from 1,000 to 2,800+ (180% increase) over 24 months, maintained consistent 5.2% engagement rate (well above industry average), and increased brand visibility by 40% leading to more business inquiries.
+            </p>
+        </div>
+    </div>
+
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal6')">&times;</span>
+            <h2 style="color: var(--primary-blue); margin-bottom: 20px;">$75K+ Revenue Generation</h2>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Challenge:</strong> Clients needed high-converting sales copy to improve their conversion rates and drive revenue growth in competitive markets.
+            </p>
+            <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <strong>Solution:</strong> Created persuasive sales copy using proven copywriting frameworks:
+            </p>
+            <ul style="margin-left: 20px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 15px;">
+                <li>Conducted deep research into target audience pain points and desires</li>
+                <li>Applied AIDA (Attention, Interest, Desire, Action) framework</li>
+                <li>Crafted compelling headlines and benefit-driven body copy</li>
+                <li>Incorporated social proof and credibility elements</li>
+                <li>Created urgency through scarcity and time-sensitive offers</li>
+                <li>Optimized landing pages for maximum conversion</li>
+                <li>A/B tested different copy variations to improve performance</li>
+            </ul>
+            <p style="line-height: 1.8; color: var(--text-secondary);">
+                <strong>Results:</strong> Produced copy that increased conversion rates by 15%, directly generated $75,000+ in trackable revenue for clients, and improved overall marketing ROI significantly through higher-performing sales materials.
+            </p>
+        </div>
+    </div>
+
+    <!-- Contact Section -->
     <section id="contact" class="contact-section section">
         <div class="container">
             <div class="contact-content">
                 <h2 class="section-title">Let's Work Together</h2>
-                <p style="font-size: 1.2rem; margin-bottom: 40px;">Ready to transform your business with expert virtual assistance? I'm available immediately for remote work globally.</p>
+                <p class="section-subtitle">
+                    Ready to transform your business with expert virtual assistance? I'm available immediately for remote work globally.
+                </p>
                 
                 <div class="contact-methods">
                     <div class="contact-method">
@@ -841,53 +1904,124 @@
                     </div>
                 </div>
 
-                <div style="margin-top: 50px; padding: 30px; background: rgba(255,255,255,0.1); border-radius: 15px;">
-                    <h3 style="margin-bottom: 20px; color: #17a2b8;">Why Choose Me?</h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: left;">
-                        <div>✓ Native English speaker with 99% proficiency</div>
-                        <div>✓ Proven track record: 45% traffic growth</div>
-                        <div>✓ 95% client retention rate</div>
-                        <div>✓ Expert in latest automation tools</div>
-                        <div>✓ Long-term partnership approach</div>
-                        <div>✓ Comprehensive training included</div>
+                <div class="why-choose">
+                    <h3>Why Choose Me?</h3>
+                    <div class="why-choose-grid">
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>5+ years of executive support experience</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Native English speaker (99% proficiency)</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Proven track record: 45% traffic growth</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>95% client retention rate</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Expert in automation tools & AI</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Long-term partnership approach</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>6 professional certifications</span>
+                        </div>
+                        <div class="why-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Comprehensive training included</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Shafiu Jimoh. All rights reserved. | Virtual Assistant & Digital Marketing Expert</p>
+            <div class="footer-content">
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/shafiujimoh" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:Shafiujimoh2003@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p>&copy; 2025 Shafiu Jimoh. All rights reserved. | Executive Virtual Assistant & Digital Marketing Expert</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 10px;">
+                    Available for remote work globally | Based in Abuja, Nigeria
+                </p>
+            </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
 
-        // Add scroll effect to navigation
+        // Navigation scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = 'rgba(44, 62, 80, 0.95)';
-                nav.style.backdropFilter = 'blur(10px)';
+                nav.style.boxShadow = '0 4px 20px rgba(74, 144, 226, 0.15)';
             } else {
-                nav.style.background = '#2c3e50';
-                nav.style.backdropFilter = 'none';
+                nav.style.boxShadow = '0 2px 8px rgba(74, 144, 226, 0.08)';
             }
         });
 
-        // Animate stats on scroll
+        // Scroll to top button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 500) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Animate elements on scroll
         const observerOptions = {
-            threshold: 0.5,
+            threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
 
@@ -895,15 +2029,37 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
+                    entry.target.style.opacity = '1';
                 }
             });
         }, observerOptions);
 
-        document.querySelectorAll('.stat-item, .skill-category, .service-card').forEach(el => {
+        // Observe elements for animation
+        document.querySelectorAll('.stat-item, .skill-category, .service-card, .experience-item, .certification-card, .project-card').forEach(el => {
+            el.style.opacity = '0';
             observer.observe(el);
         });
 
-        // Add CSS animation
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Add CSS animation keyframes
         const style = document.createElement('style');
         style.textContent = `
             @keyframes fadeInUp {
@@ -918,6 +2074,59 @@
             }
         `;
         document.head.appendChild(style);
+
+        // Interactive hover effects for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderTopColor = 'var(--secondary-teal)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.borderTopColor = 'var(--primary-blue)';
+            });
+        });
+
+        // Number counter animation for stats
+        function animateCounter(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        }
+
+        // Trigger counter animation when stats come into view
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const numbers = entry.target.querySelectorAll('.stat-number');
+                    numbers.forEach(num => {
+                        const text = num.textContent;
+                        const value = parseInt(text);
+                        if (!isNaN(value)) {
+                            animateCounter(num, value);
+                        }
+                    });
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        const statsSection = document.querySelector('.stats-grid');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // Console message
+        console.log('%cShafiu Jimoh - Portfolio Website', 'font-size: 20px; font-weight: bold; color: #4A90E2;');
+        console.log('%cLooking to collaborate? Reach out at Shafiujimoh2003@gmail.com', 'font-size: 14px; color: #5A6C7D;');
     </script>
 </body>
 </html>
